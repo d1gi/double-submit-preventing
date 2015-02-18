@@ -34,7 +34,7 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
 
         <input type="text" name="input" placeholder="Форма 1" required="required" autofocus="autofocus">
         <br/>
-        <button class="btn btn-lg btn-primary" type="submit">Жмём несколько раз</button>
+        <button class="btn btn-lg btn-primary" type="submit" id="form1_button">Жмём несколько раз</button>
     </form>
 
     <br/>
@@ -48,7 +48,7 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
 
         <input type="text" name="input" placeholder="Форма 2" required="required">
         <br/>
-        <button onclick="this.disabled=true;this.form.submit();" class="btn btn-lg btn-primary" type="submit">Жмём несколько раз (с onclick)</button>
+        <button onclick="this.disabled=true;this.form.submit();" class="btn btn-lg btn-primary" type="submit" id="form2_button">Жмём несколько раз (с onclick)</button>
     </form>
 
     <h2>Задача: как сделать так, что бы работала и HTML5 валидация и блокировка от нескольких кликов?</h2>
