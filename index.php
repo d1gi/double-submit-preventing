@@ -17,6 +17,7 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
     <title>Check Form for double click preventing</title>
 
     <link href="http://yastatic.net/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
 <!--    <script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>-->
 <!--    <script src="http://yastatic.net/bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
 </head>
@@ -32,7 +33,7 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
             при этом работает HTML5 валидация "required"
         </h4>
 
-        <input type="text" name="input" placeholder="Форма 1" required="required" autofocus="autofocus">
+        <input type="text" name="input" placeholder="Форма 1" required autofocus>
         <br/>
         <button class="btn btn-lg btn-primary" type="submit" id="form1_button">Жмём несколько раз</button>
     </form>
@@ -46,7 +47,7 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
             но нет возможности посылать несколько запросов.
         </h4>
 
-        <input type="text" name="input" placeholder="Форма 2" required="required">
+        <input type="text" name="input" placeholder="Форма 2" required>
         <br/>
         <button onclick="this.disabled=true;this.form.submit();" class="btn btn-lg btn-primary" type="submit" id="form2_button">Жмём несколько раз (с onclick)</button>
     </form>
@@ -71,6 +72,23 @@ $value = isset($_SESSION['value']) ? $_SESSION['value'] : '';
             </ul>
         </li>
     </ul>
+
+		<br/>
+		<br/>
+
+		<h2>Может так?</h2>
+		<p>используется jquery</p>
+
+		<form id="form3" method="post">
+				<input type="text" name="input" placeholder="Форма 3" required>
+				<br/>
+				<button class="btn btn-lg btn-primary" type="submit" id="form3_button">Жмём несколько раз</button>
+				<script type="text/javascript">
+					$('#form3').submit(function(){
+						$('#form3_button').attr('disabled', 'disabled');
+					});
+				</script>
+		</form>
 </div>
 
 </body>
