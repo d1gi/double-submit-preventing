@@ -24,6 +24,7 @@ $button = isset($_SESSION['button']) ? $_SESSION['button'] : '';
     <link href="http://yastatic.net/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://yastatic.net/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
 <div class="container">
@@ -73,6 +74,17 @@ $button = isset($_SESSION['button']) ? $_SESSION['button'] : '';
         <input type="text" name="input" placeholder="Форма 3" required>
         <br/>
         <button class="btn btn-lg btn-primary" type="submit" id="form3_button" name="button" value="form3">Жмём несколько раз</button>
+    </form>
+
+    <br/>
+    <br/>
+
+    <form data-action="disable" method="post">
+        <h4>Решение. Для всех таких форм добавить атрибут data-action="disable". Просто на form скрипт вешать не стоит, мало ли какие формы будут.</h4>
+
+        <input type="text" name="input" placeholder="Форма 4" required>
+        <br/>
+        <button class="btn btn-lg btn-primary" type="submit" name="button" value="form4">Жмём несколько раз</button>
     </form>
 
     <h2>Задача: как сделать так, что бы работала и HTML5 валидация, и блокировка от нескольких кликов, и уходили POST данные самой кнопки?</h2>
